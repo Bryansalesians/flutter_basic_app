@@ -2,15 +2,15 @@ import 'dart:convert';
 import 'dart:io';
 import 'dart:async';
 
-class Dog {
+class Chrs {
   final String name;
   final String location;
   final String description;
   String imageUrl;
-
+  String bryanurl;
   int rating = 10;
 
-  Dog(this.name, this.location, this.description);
+  Chrs(this.name, this.location, this.description, this.bryanurl);
 
   Future getImageUrl() async {
     if (imageUrl != null) {
@@ -19,12 +19,9 @@ class Dog {
 
     HttpClient http = new HttpClient();
     try {
-      var uri = new Uri.http('dog.ceo', '/api/breeds/image/random');
-      var request = await http.getUrl(uri);
-      var response = await request.close();
-      var responseBody = await response.transform(utf8.decoder).join();
 
-      imageUrl = json.decode(responseBody)['message'];
+
+      imageUrl = bryanurl;
     } catch (exception) {
       print(exception);
     }

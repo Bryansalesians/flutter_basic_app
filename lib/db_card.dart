@@ -1,21 +1,21 @@
-import 'package:basic_flutter_app/dog_model.dart';
-import 'dog_detail_page.dart';
+import 'package:basic_flutter_app/db_model.dart';
+import 'db_detail_page.dart';
 import 'package:flutter/material.dart';
 
-class DogCard extends StatefulWidget {
-  final Dog dog;
+class ChrsCard extends StatefulWidget {
+  final Chrs dog;
 
-  DogCard(this.dog);
+  ChrsCard(this.dog);
 
   @override
-  _DogCardState createState() => _DogCardState(dog);
+  _ChrsCardState createState() => _ChrsCardState(dog);
 }
 
-class _DogCardState extends State<DogCard> {
-  Dog dog;
+class _ChrsCardState extends State<ChrsCard> {
+  Chrs dog;
   String renderUrl;
 
-  _DogCardState(this.dog);
+  _ChrsCardState(this.dog);
 
   void initState() {
     super.initState();
@@ -46,7 +46,7 @@ class _DogCardState extends State<DogCard> {
               colors: [Colors.black54, Colors.black, Colors.blueGrey[600]])),
       alignment: Alignment.center,
       child: new Text(
-        'DOGGO',
+        'CHARACTER',
         textAlign: TextAlign.center,
       ),
     );
@@ -79,7 +79,7 @@ class _DogCardState extends State<DogCard> {
         width: 290,
         height: 115,
         child: new Card(
-          color: Colors.black87,
+          color: Colors.black38,
           child: new Padding(
             padding: const EdgeInsets.only(top: 8, bottom: 8, left: 64),
             child: new Column(
@@ -110,7 +110,7 @@ class _DogCardState extends State<DogCard> {
 
   showDogDetailPage() {
     Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-      return new DogDetailPage(dog);
+      return new ChrsDetailPage(dog);
     }));
   }
 

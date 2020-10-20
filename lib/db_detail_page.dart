@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'dog_model.dart';
+import 'db_model.dart';
 import 'dart:async';
 
-class DogDetailPage extends StatefulWidget {
-  final Dog dog;
-  DogDetailPage(this.dog);
+class ChrsDetailPage extends StatefulWidget {
+  final Chrs dog;
+  ChrsDetailPage(this.dog);
 
   @override
-  _DogDetailPageState createState() => new _DogDetailPageState();
+  _ChrsDetailPageState createState() => new _ChrsDetailPageState();
 }
 
-class _DogDetailPageState extends State<DogDetailPage> {
+class _ChrsDetailPageState extends State<ChrsDetailPage> {
   final double dogAvarterSize = 150.0;
   double _sliderValue = 10.0;
 
@@ -66,10 +66,10 @@ class _DogDetailPageState extends State<DogDetailPage> {
         builder: (BuildContext context) {
           return new AlertDialog(
             title: new Text('Error!'),
-            content: new Text("They're good dogs, Brant."),
+            content: new Text("Son buenos personajes"),
             actions: <Widget>[
               new FlatButton(
-                child: new Text('Try Again'),
+                child: new Text('Intentar de nuevo'),
                 onPressed: () => Navigator.of(context).pop(),
               )
             ],
@@ -80,7 +80,7 @@ class _DogDetailPageState extends State<DogDetailPage> {
   Widget get submitRatingButton {
     return new RaisedButton(
       onPressed: () => updateRating(),
-      child: new Text('Submit'),
+      child: new Text('Puntuar'),
       color: Colors.indigoAccent,
     );
   }
@@ -143,10 +143,10 @@ class _DogDetailPageState extends State<DogDetailPage> {
           end: Alignment.bottomLeft,
           stops: [.1, .5, .7, .9],
           colors: [
-            Colors.indigo[800],
-            Colors.indigo[700],
-            Colors.indigo[600],
-            Colors.indigo[400]
+            Colors.blue[300],
+            Colors.blue[300],
+            Colors.blue[300],
+            Colors.blue[300]
           ],
         ),
       ),
@@ -179,7 +179,7 @@ class _DogDetailPageState extends State<DogDetailPage> {
       backgroundColor: Colors.black87,
       appBar: new AppBar(
         backgroundColor: Colors.black87,
-        title: new Text('Meet ${widget.dog.name}'),
+        title: new Text('Conoce a ${widget.dog.name}'),
       ),
       body: new ListView(
         children: <Widget>[dogProfile, addYourRating],
